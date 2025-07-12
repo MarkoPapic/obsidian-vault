@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Test.md",
+                "file": "Interview Prep/New file.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Test"
+              "title": "New file"
             }
           }
         ]
@@ -98,7 +98,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Test.md",
+            "file": "Interview Prep/New file.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Test.md",
+            "file": "Interview Prep/New file.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -131,7 +131,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Test.md",
+            "file": "Interview Prep/New file.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -154,5 +154,9 @@
     }
   },
   "active": "5c0a25ad8ff704c2",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Interview Prep/Guide.md",
+    "Interview Prep/New file.md",
+    "Test.md"
+  ]
 }
