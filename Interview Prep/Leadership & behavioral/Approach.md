@@ -187,8 +187,29 @@ Personal needs:
 
 ## How do you recruit good engineers?
 
-TODO
-
+1. **Principle (hiring) philosophy**:
+	- Hire above the bar: Someone who will elevate the team, not just fit in
+	- Hire for long-term: Not just fill the current need
+	- Besides technical skills, I also look for candidates with strong ownership, accountability, product thinking, and growth mindset
+2. **Identify ideal candidate profile**
+	- Align with the company/product/team strategy and goals
+	- Clear expectations: What kind of impact do we expect this person to make?
+3. **Pitch**: How to motivate the candidates to join us. What does our team/project offer.
+4. **Interview plan**
+	- Assemble the right hiring committee
+	- Set consistent bar and remove bias: Calibrated rubrics, shadowing for consistency, structured debriefs
+	- Train the interviewers
+	- Align on the process
+	- E.g. I want the PM and PD to be involved
+5. **Help recruiter source the best candidates**
+	- Clearly communicate ICP to the recruiter
+	- Reach out to my internal network
+	- Niche communities (e.g. open-source contributors)
+6. **Evaluate results and improved**
+	- Time-to-fill
+	- Numbers (funnel)
+	- Quality of hires
+	- Retention rates
 ## Good team
 
 * Unified around a common goal
@@ -213,6 +234,9 @@ TODO
 * Learning by interacting with each other
 * Trusting relationships
 * Growth mindset
+
+## [TODO, Meta] How do you measure success of an engineering team?
+TODO
 
 ## Fix an unhealthy team
 
