@@ -16,7 +16,13 @@
 - [ ] Go over your People Management document and refresh your memory
 - [ ] Update the interview prep notes with the new situations/responses
 - [ ] Prepare an "About Me" pitch
-- [ ] Practice the `Product Architecture` by doing a couple of tasks (with a timer and Excalidraw): https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare 
+- [ ] Practice the `Product Architecture` by doing a couple of tasks (with a timer and Excalidraw): https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare
+	- [ ] Instagram ads click aggregator
+	- [ ] Recommender system for Facebook
+	- [ ] Instagram
+	- [ ] Uber
+	- [ ] Video upload and sharing app
+	- [ ] Restaurant recommendation service
 - [ ] Go over [Life at Meta as an Engineering Manager](https://www.metacareers.com/blog/life-at-facebook-as-an-engineering-manager/)
 - [ ] Ask ChatGPT agent for help. Have mock interviews with it if possible.
 - [ ] Have an actual mock interview: https://www.hellointerview.com/mock/schedule?focus=true
