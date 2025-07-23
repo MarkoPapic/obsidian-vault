@@ -1,7 +1,7 @@
 
 1. **Clarify requirements** (~5m)
 	1. Functional requirements
-		- Ask about user persona
+		- Nice touch: Ask about user persona
 	2. Non-functional requirements
 		- Quantify (ask for specific numbers)!
 		- Per use case. E.g. 'low latency' is far less meaningful than 'low latency search'
