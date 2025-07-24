@@ -11,6 +11,7 @@
     - Links from Celena's email
 	- Links from Celena's documents
  - [ ] Go over Celena's advices in [[Interview notes#First loop]]
+ - [ ] Go over your People Management handbook and prepare a good "managing underperformer" story
 - [ ] Go over the [preparation hub](https://www.metacareers.com/profile/preparation_hub) that Meta tailored for this role (requires login to your Career Profile)
 - [ ] Go to Meta's GlassDoor and try to get some insights
 - [ ] Go over your People Management document and refresh your memory
