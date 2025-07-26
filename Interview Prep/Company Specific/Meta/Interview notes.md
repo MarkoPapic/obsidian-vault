@@ -25,7 +25,7 @@ Example questions:
 * Conflict
 	* Describe a conflict within your team that you handled
 	* Describe a conflict you had with your manager
-	* Describe a cross-functionally
+	* Describe a conflict you had cross-functionally
 * Ambiguity
 	* Scoping the project with unclear requirements
 
