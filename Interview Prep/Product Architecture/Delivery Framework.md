@@ -18,7 +18,8 @@
 		- versioning
 		- request ID
 4. **High level design** (~10-15m)
-	- Don't overthink this!
+	- Don't overthink this
+	- Clearly justify decisions
 5. **Deep dives** (~10m)
 	- **Start with the problem space, explain alternative solutions, decide**
 	- **Address core challenges** (e.g. hash collisions in URL shortener)
