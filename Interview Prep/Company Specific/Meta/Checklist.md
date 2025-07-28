@@ -11,9 +11,10 @@
     - Links from Celena's email
 	- Links from Celena's documents
  - [ ] Go over Celena's advices in [[Interview notes#First loop]]
+ - [ ] Go over the [system design questions breakdown](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly) and get "core challenges" for each (you may need Premium)
  - [ ] Go over your People Management handbook and prepare a good "managing underperformer" story
 - [ ] Go over the [preparation hub](https://www.metacareers.com/profile/preparation_hub) that Meta tailored for this role (requires login to your Career Profile)
-- [ ] Go to Meta's GlassDoor and try to get some insights
+- [x] Go to Meta's GlassDoor and try to get some insights
 - [ ] Go over your People Management document and refresh your memory
 - [ ] Update the interview prep notes with the new situations/responses
 - [ ] Prepare an "About Me" pitch
