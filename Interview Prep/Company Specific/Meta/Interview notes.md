@@ -21,7 +21,7 @@ Example questions:
 * People management
 	* Describe how you discovered knowledge gap in your team
 	* Managing an underperformer
-	* Someone in your team who grew significanntly
+	* Someone in your team who grew significantly
 * Conflict
 	* Describe a conflict within your team that you handled
 	* Describe a conflict you had with your manager
