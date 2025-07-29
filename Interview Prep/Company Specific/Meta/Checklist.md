@@ -10,23 +10,22 @@
 - [x] Go over prep materials
     - Links from Celena's email
 	- Links from Celena's documents
- - [ ] Go over Celena's advices in [[Interview notes#First loop]]
- - [ ] Go over the [system design questions breakdown](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly) and get "core challenges" for each (you may need Premium)
- - [ ] Go over your People Management handbook and prepare a good "managing underperformer" story
-- [ ] Go over the [preparation hub](https://www.metacareers.com/profile/preparation_hub) that Meta tailored for this role (requires login to your Career Profile)
+ - [x] Go over Celena's advices in [[Interview notes#First loop]]
+ - [ ] Go over the [system design questions breakdown](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly) and get "core challenges" for each
+ - [x] Go over your People Management handbook and prepare a good "managing underperformer" story
+- [x] Go over the [preparation hub](https://www.metacareers.com/profile/preparation_hub) that Meta tailored for this role (requires login to your Career Profile)
 - [x] Go to Meta's GlassDoor and try to get some insights
-- [ ] Go over your People Management document and refresh your memory
-- [ ] Update the interview prep notes with the new situations/responses
-- [ ] Prepare an "About Me" pitch
-- [ ] Practice the `Product Architecture` by doing a couple of tasks (with a timer and Excalidraw): https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare
-	- [ ] Instagram ads click aggregator
+- [x] Go over your People Management document and refresh your memory
+- [x] Update the interview prep notes with the new situations/responses
+- [x] Prepare an "About Me" pitch
+- [x] Practice the `Product Architecture` by doing a couple of tasks (with a timer and Excalidraw): https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare
+	- [x] Instagram ads click aggregator
 	- [ ] Recommender system for Facebook
 	- [ ] Instagram
-	- [ ] Uber
-	- [ ] Video upload and sharing app
+	- [x] Uber
+	- [x] Video upload and sharing app
 	- [ ] Restaurant recommendation service
-- [ ] Go over [Life at Meta as an Engineering Manager](https://www.metacareers.com/blog/life-at-facebook-as-an-engineering-manager/)
 - [ ] Ask ChatGPT agent for help. Have mock interviews with it if possible.
-- [ ] Have an actual mock interview: https://www.hellointerview.com/mock/schedule?focus=true
+- [x] Have an actual mock interview: https://www.hellointerview.com/mock/schedule?focus=true
 - [ ] Prepare questions for them
-- [ ] Get familiar with [Excalidraw](https://excalidraw.com/) shortcuts
+- [x] Get familiar with [Excalidraw](https://excalidraw.com/) shortcuts
