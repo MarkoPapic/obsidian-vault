@@ -1,4 +1,8 @@
-# First Round
+# Second round
+
+- [ ] Create a checklist
+
+# First round
 
 - [x] Decide on System Design vs Product Architecture [Understanding the Differences between Meta's SWE Product Architecture and System Design Interviews](https://www.hellointerview.com/blog/meta-system-vs-product-design?utm_source=reddit&utm_medium=social&utm_campaign=product-vs-system)
 - [x] Reply to Celena
