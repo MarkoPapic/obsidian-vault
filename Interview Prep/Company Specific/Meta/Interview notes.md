@@ -50,3 +50,29 @@ Common failures:
 * Overcomplicating design
 
 [Jackson Gabbard](https://www.youtube.com/@jackson-gabbard)'s [episode 6](https://www.youtube.com/watch?v=ZgdS0EUmn70) is still relevant
+
+# Next steps
+
+Product architecture:
+- Strong
+	- Problem navigation
+	- Strong communication
+	- Methodic approach to problem solving with tradeoff discussions
+	- Good understanding of requirements
+- Improvement areas
+	- Latency estimation was high
+	- Didn't leave time to get into discussion about "undo"
+
+Behavioral:
+* Strong
+	* Providing feedback
+	* Mentoring seniors
+	* Resolving conflict
+* Improvement areas
+	* Communication:
+		* I don't always answer exactly to the point
+		* I should've asked clarifying questions
+	* Low performance management:
+		* Lack of experience with letting someone go due to low performance
+
+Celena will not be my recruiter anymore. Another recruiter will take over now.

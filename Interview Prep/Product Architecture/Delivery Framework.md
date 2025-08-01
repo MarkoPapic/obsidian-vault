@@ -17,6 +17,7 @@
 	- Nice touches:
 		- versioning
 		- request ID
+		- pagination
 4. **High level design** (~10-15m)
 	- Don't overthink this
 	- Clearly justify decisions
