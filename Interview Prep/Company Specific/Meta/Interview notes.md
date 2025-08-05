@@ -76,3 +76,89 @@ Behavioral:
 		* Lack of experience with letting someone go due to low performance
 
 Celena will not be my recruiter anymore. Another recruiter will take over now.
+
+Interview is valid for 2-3 months
+I need to provide with a mininum 5 days of availability and at least a couple of hours per day
+
+### Previous feedback
+- It was good, but needs to be deeper
+- Letting someone go
+- People management:
+	- It was good overal, but more ok than good
+	- Nowadays they are more like "It is ok, but we need really good people"
+	- In the next rounds, this needs to be better and deeper
+
+## Interview rounds
+
+5 interviews (2 technical, 3 managements)
+- System design (another one)
+- Coding
+
+### Design (included feedback from the previous one)
+Focus areas:
+- Problem navigation (good)
+- Solution design (good)
+- Tehnical excellence (deep dive): I could do better here
+	- Positives:
+		- Structured (delayed until I have details)
+	- Improvement areas:
+		- Didn't think about node crash + stickiness
+		- Game validation
+- Technical communication (good)
+
+### Coding (included someone else's feedback)
+45 minutes, 2 algorithmic questions, expect 2 working solutions
+- Problem solving: Time/space complexity estimation was accurate, recognized that recursion can solve it
+- Coding: Quite quick in coding, write Java quickly, recursion, working solution
+- Verification: Debugging, spotting edge cases
+- Communication: Explained what they are about to do; communicate as you code
+
+### People management
+Focus areas:
+- High performers
+- Low performers
+- Conflict resolution within the team
+- Building the team
+- Managing the team
+- Improving the team
+- Letting someone go
+General guide:
+- Proactivity (identify performance issues ahead of time)
+- Understanding the root cause (empathy)
+- Focus on seniors
+- Outcomes/reflection and learnings
+- Avoid "easy way out" and avoiding responsibility. E.g. no "moved them to another team"
+- When managing the team, also include cross-functional stuff
+	- E.g. are you aware of how other teams are performing so you can identify gaps in yours
+	- Are you enabling them to work cross-functionally
+
+### Project retrospective
+What project to choose:
+- Long-term project
+- Project you had influence over (running rather than observing)
+Focus areas:
+- Setting direction
+- Project execution
+- Stakeholder management
+- Cross-team collaboration (influence, building relationships, shared goals)
+	- Not just the good stuff (we hold hands), they want to hear about the challenges
+- Learnings/retrospective
+- Don't be a dictator (providing autonomy)
+- Business acumen
+	- Linking team goals to business objectives
+- Tradeoffs
+- 
+
+### Behavioral
+Focus areas:
+- Feedback culture and growth mindset
+	- Do I proactively seek
+	- How do I take feedback (constructive)
+- Managing ambiguity
+	- Articulate ambiguity
+	- Quickly pivot/adapt
+	- Track the changes
+- Conflicts: How I deal with the conflict
+- Motivations to work
+	- E.g. "Why do you get out of bad in the morning?"
+	- The answer should be focused on **people***. E.g. you are passionate about people management (e.g. growing them)

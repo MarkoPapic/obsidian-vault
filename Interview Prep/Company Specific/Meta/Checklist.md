@@ -1,6 +1,8 @@
 # Second round
 
-- [ ] Create a checklist
+- [ ] Go over Gianni's email and over the materials referenced in the email
+- [ ] Go over Gianni's advices in [[Interview notes#Next steps]]
+- [ ] 
 
 # First round
 
