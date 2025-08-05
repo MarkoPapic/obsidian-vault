@@ -1,14 +1,20 @@
 
-- DB edit "Close" should get you to the active version
-- "New version available" banner should also be displayed in edit mode (but without actions)
-- Check if we can customize horizontal status scroll bar
-- Remove signal from list returns an error from time to time
-- Expanding signal from a list returns an error sometimes at line `color: iconStyle.color`
-- We should rename side menu
-	- "DB history" -> "Page change history"
-	- "Working DB versions" -> "Page working versions"
-- IP address is not shown in the status list
-- Port is not shown in the status list
-- IP address and port should be next to each other in the status list
-- Azure GateWay stop and start
-- Econolite pedestrian status is not working
+Planning:
+- Entra login page customization
+- Customer portal + installation streamlining
+
+Customer portal:
+- User management
+- Show public keys
+- Add new public key
+	- Paste
+	- Upload
+	- Allow auth using installation token
+- Generate installation token
+	- Specify duration
+	- Store only hash
+- List installation tokens
+	- don't actually display them
+	- show access/usage logs
+- Download installation script (???)
+- 
