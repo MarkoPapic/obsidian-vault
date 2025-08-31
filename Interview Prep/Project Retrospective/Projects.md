@@ -1,6 +1,13 @@
 
 ## Build Cloud
 
+### Data
+* >500K builds per month
+	* ~300 builds/s, peak 1K concurrent builds
+	* Considering that 500K builds is clustered around weekdays, working hours
+* 40K MAU
+* 3K orgs
+
 ### Setting direction
 * **Business acumen**: Parts of company strategy were:
 	* multi-product revenue
@@ -13,6 +20,9 @@
 * **Built the team**
 	* We needed people with SaaS experience
 	* We needed people with low level Buildkit and Engine experience
+* **Exploratory phase**
+	* Talking to existing customers
+	* Talking to TAG team
 * **Setting success metrics**: Partnered with product manager
 	* North star: Number of cached builds: 80% builds with at least 1 cached layer
 	* Health metrics:
@@ -25,8 +35,9 @@
 		* E.g. multi-product ARR
 * **Driving success metrics**
 	* Looker analytics: Reviewing with PM and PMM weekly
-		* Builds, orgs, cached layers...
+		* Builds, orgs, subscription type, cached layers...
 		* Top customers
+		* Usage patterns
 		* Usage within org (e.g. champion + onboarded other members)
 		* Revenue
 	* Grafana (OTel) + BugSnag + Swarmia: Weekly operations review
@@ -34,17 +45,6 @@
 		* Availability + Reliability
 		* DORA
 	* Alerting: Slack alerts
-* **Tools**:
-	* Google sheet: Roadmap and resourcing plan
-	* Jira: Backlog
-	* Looker: Data analytics, funnel
-	* Grafana + OTel: Engineering observability, SLOs
-	* Swarmia: DORA
-	* Jira dashboard for CSESC
-
-### Project execution
-* **Identifying gaps**
-	* See *Setting direction -> Driving success metrics*
 	* CSESC
 	* Slack channels with biggest customers / design partners
 * **Tools**:
@@ -54,57 +54,109 @@
 	* Grafana + OTel: Engineering observability, SLOs
 	* Swarmia: DORA
 	* Jira dashboard for CSESC
-* **Course-correct**:
-	* Pivoting to CI
-	* Largest customers (>60% revenue) has 10 builds in parallel. Focus on stability and scalability. (code yellow)
+
+### Project execution
+* **Driving delivery & quality**
+	* Clear goals
+	* Success metrics
+		* see *Setting success metrics*
+		* see *Driving success metrics*
+	* Planning and prioritization - focus on outcomes, not outputs (providing autonomy)
+	* Execution discipline: Weekly planning, standups, retros, demos.
+	* Short feedback loop: Demos, design docs, dashboards
+* **Removing blockers**
+	* Billing team potentially not on track for overages API
+	* BYOC: Found companies in the pipeline to get insights on what they want
+* **Identify gaps / course-correct?**
+	* Stability code yellow (reliability metric, CSESC)
+* **Tools**:
+	* Google sheet: Roadmap and resourcing plan
+	* Jira: Backlog
+	* Looker: Data analytics, funnel
+	* Grafana + OTel: Engineering observability, SLOs
+	* Swarmia: DORA
+	* Jira dashboard for CSESC
+
+### Stakeholder management / Cross functional collaboration
+* I Identified the stakeholders and proactively established a relationship with them:
+	* Upwards: VP of product, VP of engineering
+	* Product + design (obviously)
+	* PMM for GTM
+	* Support
+	* Sales
+	* Legal
+	* Security
+	* Technical writers
+	* Finances (budget for on-call)
+	* Other teams (Core Build, Billing)
+* Reached out and clarified what they care about
+	* E.g. Support needs external/internal documentation, escalation paths, troubleshooting guides...
+	* E.g. legal needs to review our data flows
+	* E.g. security needs us to be SOC2 etc. compliant
+* Bi-weekly cross-functional syncs
+	* Product, design, PMM, support, sales, legal, security
+		* Share updates
+		* Identify dependencies
+		* Identify and raise risks
+	* Depending on the needs and the stage of the project, I communicate with some of them more frequently
+* Frequent status updates: Avoid surprises and last-minute bad news
+* **Situations**:
+	* Consumption-based pricing + RevRec challenges
+		* I identified that the current pricing model is not ideal for our new product
+		* Sat down with the PM and we came up with a Billing UX proposal for DBC
+		* Reached out to the Billing team to put it on their roadmap and included them in our weekly XFN syncs
+		* Helped the team understand the needs and context and established a joint working group
+		* Defined clear APIs/ownership
+		* RevRec challanges (see *Conflicts/Challenges/Missalignment*)
+	* Multi-region (product, cost, legal, security)
+	* Untrusted compute joint working group
+	* Funnel improvements:
+		* Identified leaky funnel
+		* Attended EAP customer calls and UX research calls
+		* Facilitated a workshop with PM and designer and came up with onboarding improvements
+	* Regularly participated in EAP customer calls and UX research calls. PM and designer appreciated the engineering perspective. E.g. answering the question "Why can't we just build this ourselves using Buildkit `remote` driver?"
+	* Billing team code red
+	* Sales pipeline: What' s coming ahead
+* **Conflicts/Challenges/Missalignment**:
+	* Billing system not designed for consumption-based pricing and RevRec cannot recognize revenue this way
+		* I scheduled a meeting to understand their needs and limitations
+		* Involved PM and drove alignment between 3 parties
+		* Suggested a "buckets of minutes" SKU
+			* Tradeoff, we don't have post paid overages for GA
+		* Got commitment that they will support it in 6 months and then we will be able to support post-paid overages
+	* Company on-call is weekly 12-hour shifts but my team is not geographically distributed and other engineers cannot support our product yet
+
+### Ambiguities and shift in direction
+* BYOC (Single tenancy)
+* Pivoting to CI
+* Largest customers (>60% revenue) has 10 builds in parallel. Focus on stability and scalability. (code yellow)
+
+### Tradeoffs: business vs operations vs development
+* Dynamic provisioning
+* BYOC (single tenancy)
+* Private network access
+* GPU painted door
+
+### Learnings, mistakes, retrospective
+* Stability code yellow (retrospective!)
+* Billing team code red (retrospective!)
+
+### Challenges
+* Buildkit cannot scale horizontally
+* Billing system not designed for consumption-based pricing and RevRec cannot recognize revenue this way - see *Stakeholder management*
+* Context transfer optimization
+
+### Top-down & bottoms-up management styles – when to apply each one
+* **Top-down**: Manager sets goals, priorities, and approach; useful when clarity, speed, or alignment is critical. Effective in:
+	* Crisis situations (e.g., outage, security vulnerability).
+    - Company-wide strategic pivots where consistency is key.
+    - Early-stage projects with no clarity.
+* **Bottoms-up:** Team contributes ideas, owns solutions, and drives innovation; useful for creativity, buy-in, and scaling leadership. Effective in:
+	* Mature, high-performing teams who thrive with autonomy.
+	* Innovation-heavy or ambiguous problem spaces.
+	* Building long-term team ownership and engagement.
 
 ## Focus areas
 
-- [ ] Architecture and technical stuff
 - [ ] Data (MAU, metrics, scale)
-- [x] Setting direction:
-	- [x] How do you set and drive success metrics?
-	- [x] How do you align your projects to the objectives of the organization at large?
-	- [x] Business acumen: Linking team goals to business objectives
-- [ ] Project Execution:
-	- [x] How do you identify and address gaps?
-	- [x] What tools and/or systems have you utilized or built to ensure quality work across complex problems?
-	- [x] How often do you course-correct?
-	- [ ] How do you manage your team to ensure execution?
-	- Note from Gianni: Providing autonomy, not being a dictator
-- [ ] Stakeholder management
-	- [ ] When have you had to influence and negotiate with stakeholders and peers?
-	- [ ] How do you build strong partnerships across the organization?
-	- [ ] How do you foster engagement?
-	- Suggestions:
-		- ???
-		- TODO: Ask ChatGPT for an example of stakeholder management
-- [ ] Cross-team collaboration (influence, building relationships, shared goals)
-	- [ ] Not just the good stuff (we hold hands), they want to hear about the challenges
-	- Suggestions:
-		- BuildKit
-		- consumption based pricing
-		- support enablement
-- [ ] Learnings, mistakes, retrospective
-	- Suggestions:
-		- Private network access
-		- DBC release postponed (see *Leadership & Behavioral*)
-- [ ] Tradeoffs: Understanding design trade-offs
-	- Suggestions:
-		- BYOC (single tenancy), private network access
-		- Dynamic provisioning
-- [ ] Business vs operations vs development considerations
-- [ ] Ambiguities and shift in direction.
-- [ ] Do you understand top-down & bottoms-up management styles – when to apply each one?
-- [ ] Ability to clearly communicate thoughts
-
-## General suggestions
-* Funnel improvements: collaboration with product, design, and data team
-* On-call process
-* The first team with consumption-based pricing
-	* We needed metering
-	* We needed a good billing UI
-* Challenges:
-	* Buildkit cannot scale horizontally, so our team needed to do this with their guidance
-	* Dynamic provisioning with untrusted compute
-* Incident response
+- [ ] 
