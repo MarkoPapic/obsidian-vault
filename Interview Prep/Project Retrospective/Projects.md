@@ -1,15 +1,23 @@
 
 ## Build Cloud
 
+### Themes
+* [[#Why?]]
+* [[#Setting direction]]
+* [[#Team building]] 
+* [[#Project execution]]
+* [[#Phased rollout]]
+* [[#Stakeholder management / XFN]] and [[#Challenges]]
+
 ### Data
-* >500K builds per month
+* more than 500K builds per month
 	* ~300 builds/s, peak 1K concurrent builds
 	* Considering that 500K builds is clustered around weekdays, working hours
 * 40K MAU
 * 3K orgs
 
-### Setting direction
-* **Business acumen**: Parts of company strategy were:
+### Why?
+* ***Business acumen**: Parts of company strategy were:
 	* multi-product revenue
 	* expand into cloud industry and offer cloud-based products
 * **Problem space**: An average developer spends 1h per day waiting for builds to finish
@@ -17,13 +25,11 @@
 	* Powerful infrastructure specialized for builds
 	* Shared caching
 	* DD integration
-* **Built the team**
-	* We needed people with SaaS experience
-	* We needed people with low level Buildkit and Engine experience
-* **Exploratory phase**
-	* Talking to existing customers
-	* Talking to TAG team
-* **Setting success metrics**: Partnered with product manager
+
+### Setting direction
+* **Business objectives (OKRs)**
+	* Multi-product ARR
+* **Success metrics**: Partnered with product manager
 	* North star: Number of cached builds: 80% builds with at least 1 cached layer
 	* Health metrics:
 		* Cold start: Up to 3 seconds
@@ -31,8 +37,22 @@
 		* Availability: 99.99%
 		* Reliability: Number of successful builds: 99.99%
 		* Incident response: acknowledge within 15 minutes (on-call)
-	* Business metrics: Our OKRs are tied into company OKRs
-		* E.g. multi-product ARR
+* **Roadmap**
+
+### Team building
+* Skills I needed
+* Team composition
+* Reflection:
+	* The team executed great, the software scales successfully to 500K builds per month.
+	* They lacked skills in untrusted compute on-demand provisioning
+
+### Project execution
+* **Clear goals**
+* **Technical strategy**: sprinkle shows of success (500K builds/month)
+* **Driving delivery & quality**
+	* Planning and prioritization - focus on outcomes, not outputs (providing autonomy)
+	* Execution discipline: Weekly planning, standups, retros, demos.
+	* Short feedback loop: Demos, design docs, dashboards
 * **Driving success metrics**
 	* Looker analytics: Reviewing with PM and PMM weekly
 		* Builds, orgs, subscription type, cached layers...
@@ -47,23 +67,6 @@
 	* Alerting: Slack alerts
 	* CSESC
 	* Slack channels with biggest customers / design partners
-* **Tools**:
-	* Google sheet: Roadmap and resourcing plan
-	* Jira: Backlog
-	* Looker: Data analytics, funnel
-	* Grafana + OTel: Engineering observability, SLOs
-	* Swarmia: DORA
-	* Jira dashboard for CSESC
-
-### Project execution
-* **Driving delivery & quality**
-	* Clear goals
-	* Success metrics
-		* see *Setting success metrics*
-		* see *Driving success metrics*
-	* Planning and prioritization - focus on outcomes, not outputs (providing autonomy)
-	* Execution discipline: Weekly planning, standups, retros, demos.
-	* Short feedback loop: Demos, design docs, dashboards
 * **Removing blockers**
 	* Billing team potentially not on track for overages API
 	* BYOC: Found companies in the pipeline to get insights on what they want
@@ -77,7 +80,12 @@
 	* Swarmia: DORA
 	* Jira dashboard for CSESC
 
-### Stakeholder management / Cross functional collaboration
+### Phased rollout
+* C0
+* EAP (exit criteria)
+* GA
+
+### Stakeholder management / XFN
 * I Identified the stakeholders and proactively established a relationship with them:
 	* Upwards: VP of product, VP of engineering
 	* Product + design (obviously)
@@ -124,11 +132,13 @@
 		* Suggested a "buckets of minutes" SKU
 			* Tradeoff, we don't have post paid overages for GA
 		* Got commitment that they will support it in 6 months and then we will be able to support post-paid overages
+	* Untrusted compute joint working group
 	* Buildkit maintainer win-win
 	* Andrei and pinning Entity Tree
 	* Company on-call is weekly 12-hour shifts but my team is not geographically distributed and other engineers cannot support our product yet
 
 ### Ambiguities and shift in direction
+* Multiregion
 * BYOC (Single tenancy)
 * Pivoting to CI
 * Largest customers (>60% revenue) has 10 builds in parallel. Focus on stability and scalability. (code yellow)
@@ -145,8 +155,8 @@
 * Billing team code red (retrospective!)
 
 ### Challenges
-* Buildkit cannot scale horizontally
 * Billing system not designed for consumption-based pricing and RevRec cannot recognize revenue this way - see *Stakeholder management*
+* Buildkit cannot scale horizontally
 * Context transfer optimization
 
 ### Top-down & bottoms-up management styles – when to apply each one
@@ -158,8 +168,3 @@
 	* Mature, high-performing teams who thrive with autonomy.
 	* Innovation-heavy or ambiguous problem spaces.
 	* Building long-term team ownership and engagement.
-
-## Focus areas
-
-- [ ] Data (MAU, metrics, scale)
-- [ ] 
