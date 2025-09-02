@@ -10,9 +10,9 @@
 	- What are the core entities that your API will exchange and your system will persist?
 	- Examples: user, tweet, follow
 3. **API / System interface / Contracts** (~2m)
-	- `POST /v1/tweet`
-	- `GET /v1/tweet/:tweetId -> Tweet`
-	- `POST /v1/follow/:userId`
+	- `POST /v1/tweets`
+	- `GET /v1/tweets/:tweetId -> Tweet`
+	- `POST /v1/follows/:userId`
 	- `GET /v1/feed?cursor={lastItemId}&pageSize=100 -> Tweet[]`
 	- Nice touches:
 		- versioning
@@ -55,7 +55,7 @@
 | [Ad click generator](https://www.hellointerview.com/learn/system-design/problem-breakdowns/ad-click-aggregator) | scaling writes                                 |
 | [WhatsApp](https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp)                      | real-time updates                              |
 | [YouTube](https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube)                        | large blobs, scaling reads, long-running tasks |
-| [FB live comments](https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-live-comments)      | real-time updates,                             |
+| [FB live comments](https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-live-comments)      | real-time updates                              |
 
 ## Cheatsheet
 
