@@ -124,6 +124,7 @@
 		* Suggested a "buckets of minutes" SKU
 			* Tradeoff, we don't have post paid overages for GA
 		* Got commitment that they will support it in 6 months and then we will be able to support post-paid overages
+	* Buildkit maintainer win-win
 	* Andrei and pinning Entity Tree
 	* Company on-call is weekly 12-hour shifts but my team is not geographically distributed and other engineers cannot support our product yet
 
