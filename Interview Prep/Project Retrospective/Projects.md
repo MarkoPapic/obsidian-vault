@@ -18,7 +18,7 @@
 * 3K orgs
 
 ## Why?
-* ***Business acumen**: Parts of company strategy were:
+* **Business acumen**: Parts of company strategy were:
 	* multi-product revenue
 	* expand into cloud industry and offer cloud-based products
 * **Problem space**: An average developer spends 1h per day waiting for builds to finish
