@@ -152,7 +152,7 @@ Focus areas:
 ### Behavioral
 Focus areas:
 - Feedback culture and growth mindset
-	- Do I proactively seek
+	- Do I proactively seek feedback
 	- How do I take feedback (constructive)
 - Managing ambiguity
 	- Articulate ambiguity
