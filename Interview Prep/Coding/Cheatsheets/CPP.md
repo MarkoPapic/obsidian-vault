@@ -63,6 +63,8 @@ int main() {
 ```cpp
 int arr[100];              // default-initialized
 int arr2[3] = {1, 2, 3};   // fixed size
+int arr[4][4];             // two-dimensional
+int arr[2][2] = {{1, 2},{3, 4}};
 
 memset(arr, 0, sizeof(arr));   // set all to 0
 ```
@@ -79,6 +81,7 @@ stoi("123");             // string to int
 ### Vector
 ```cpp
 vector<int> v = {1, 2, 3};
+std::vector<int> v (5,3); // count, value
 v.push_back(4);
 int x = v[1];          // access element
 v.size(); v.empty(); v.clear();
