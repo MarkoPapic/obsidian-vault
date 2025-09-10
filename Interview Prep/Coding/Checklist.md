@@ -1,6 +1,6 @@
 - [x] Try ChatGPT voice mode
 - [x] Push Obsidian notes
-- [ ] Open the following notes on Mac (Delivery framework, Challenge mapping cheatsheet, CPP cheatsheet, DP cheatsheet, Combinatorics cheatsheet)
+- [x] Open the following notes on Mac (Delivery framework, Challenge mapping cheatsheet, CPP cheatsheet, DP cheatsheet, Combinatorics cheatsheet)
 - [x] Prepare CPP snippet that quckly verify different test cases (see ChatGPT suggestion)
 - [x] Watch a mock interview
 - [x] Go over the DP clues and try to remember the transitions
