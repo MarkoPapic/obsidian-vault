@@ -11,3 +11,9 @@
 	1. Talk as you code
 	2. Add edge cases you identified additionally
 7. **Evaluate space + time complexity**
+
+**Rated on**
+* **Problem solving**: solve the problem, time-space complexity
+* **Coding**: proficiency in the programming language
+* **Verification**: debugging, spotting edge cases
+* **Communication**: Explain what you do, communicate as you code
