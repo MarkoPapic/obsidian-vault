@@ -162,3 +162,15 @@ Focus areas:
 - Motivations to work
 	- E.g. "Why do you get out of bad in the morning?"
 	- The answer should be focused on **people***. E.g. you are passionate about people management (e.g. growing them)
+
+## Next steps after the fool loop
+
+**I passed all the interviews!**
+VP will review, but before, we need a team of interest
+	He shared my feedback with all hiring managers.
+	Once we find teams of interests, I will have a call with a hiring manager.
+Slight pause: Most open roles are infrastructure-heavy roles and I am product-oriented.
+I need to send a CV to Gianni to share with HMs.
+	If it contains something that leans towards the infrastructure, that could make things faster, but not necessary.
+By next week, he will send me the teams of interest.
+He will reach out to me next week.
