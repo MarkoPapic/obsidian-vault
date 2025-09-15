@@ -1,18 +1,7 @@
-# 📘 C++ Coding Interview Cheat Sheet (Meta EM)
-
-## ✅ 1. Useful Headers
-```cpp
-#include <iostream>
-#include <vector>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <map>
-#include <set>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <algorithm>
-#include <climits>
-#include <cmath>
-#include <cstring>  // for memset
+- [x] Update operational state message
+- [x] Fix QFree status decoder now that `activePhasePlan` OID is moved from status to operational state
+- [x] Implement `activeSequence` in QFree operational state decoder
+- [x] Decopule operational state decoder
+- [x] Compile operational state ProtoBuf message on the client
+- [x] Fix QFree `activePhasePlan` usage on the client
+- [x] Fix `currentPlan` -> `coordinationPattern` rename in op state ProtoBuf
