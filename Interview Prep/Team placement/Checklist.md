@@ -1,0 +1,4 @@
+- [x] Come up with more questions about the team
+- [x] Ask ChatGPT
+- [x] Go over https://www.hellointerview.com/blog/team-match-survival-guide again
+- [ ] Research other resources on the internet

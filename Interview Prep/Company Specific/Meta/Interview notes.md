@@ -174,3 +174,60 @@ I need to send a CV to Gianni to share with HMs.
 	If it contains something that leans towards the infrastructure, that could make things faster, but not necessary.
 By next week, he will send me the teams of interest.
 He will reach out to me next week.
+
+## Team placement
+
+**Role: Privacy and Security**
+* HM
+	* Yiannis P (Director)
+	* Philip (HM)
+* Org: Privacy and Security
+* JD: No JD since the role is confidential
+* I am not the only candidate
+
+
+## Team placement call - Privacy & Security
+### About the org
+
+Meta is good at building products that engage users.
+* You focus on 99% of users, and neglect 1%
+* Over time, 1% of users starts complaining
+* They complain to their representatives, who writes laws
+	* GDPR
+	* Cookies
+	* ...
+* These laws prescribe product requirements to you
+	* This makes you cater for 1% of people, otherwise you pay penalty
+They work with lawyers, PMs, etc. and come up with requirements, edge cases...
+Then they build technologies that allow product teams
+Privacy/risks org. But not responsible only for privacy laws, it is responsible for:
+* Privacy laws
+* Any abuse laws
+* Competitions laws
+* ...
+You can call it "compliance" org.
+They need to do this across the products. There are two extremes of doing this:
+1. Provide requirements and make every product accountable for implementing it
+2. Implement it centrally
+
+### Team focus
+
+E.g. you are not allowed to share data with 3rd parties. The goal is to identify, detect, and prevent this. Some examples of unintentionally/accidentally sharing data with 3rd parties:
+* Your team calls a 3rd party API (a.g. Google Maps), sending user data
+* Scraping (people using your APIs or scraping your web pages)
+* Security breaches (someone hacks you)
+
+4 teams.
+* Rate limiting system
+* ...
+
+Team member skill requirements:
+* Backend
+* Abuse prevention
+
+Success metrics:
+* Not getting sued
+* Being compliant
+* Incidents are rare
+* When incidents happen, you have a robust process for responding
+* Stay ahead of the curve - find out about laws and regulations, and implement them before there is an incident

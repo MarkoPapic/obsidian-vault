@@ -1,7 +1,4 @@
-- [x] Update operational state message
-- [x] Fix QFree status decoder now that `activePhasePlan` OID is moved from status to operational state
-- [x] Implement `activeSequence` in QFree operational state decoder
-- [x] Decopule operational state decoder
-- [x] Compile operational state ProtoBuf message on the client
-- [x] Fix QFree `activePhasePlan` usage on the client
-- [x] Fix `currentPlan` -> `coordinationPattern` rename in op state ProtoBuf
+- [x] Fix staging versions
+- [ ] Fix Sasa's DB
+- [x] `refreshControllerStatusSubscription` error log spams Grafana
+
