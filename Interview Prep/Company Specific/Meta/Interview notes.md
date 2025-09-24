@@ -231,3 +231,33 @@ Success metrics:
 * Incidents are rare
 * When incidents happen, you have a robust process for responding
 * Stay ahead of the curve - find out about laws and regulations, and implement them before there is an incident
+
+## Sep 22
+Preliminary numbers (not official):
+* Base: £139K (€160K)
+* Performance bonus: 20% £27.8K (€32K)
+	* Can be multiplied by individual and company performance
+* Equity: 600K$ vesting over 4 years (in dollars)
+	* $150Kper year (€127K)
+* Equity refreshes: every year you can get an equity refresh (even for average performance)
+* Relocation package: once we have an offer finalized
+
+This would make a total yearly compensation: 
+
+Reasons they will move from these:
+* You want more money
+	* Gianni is here to tell me what's realistic
+* You've got a competing offer
+	* Gianni can use this as a leverage
+* Unvested stocks
+	* Docker's stock options are a data point
+	* But the finances will push back since it is not public
+* What you have vesting over the next 12 months
+
+Data points that don't work:
+* Taxes
+* Cost of living
+* ...
+
+**Next steps**
+* We will catch up tomorrow at the same time - 10:30h
