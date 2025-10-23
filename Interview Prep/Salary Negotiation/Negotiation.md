@@ -80,3 +80,14 @@ Data points that don't work:
 * *I’ll also be forfeiting unvested RSUs. While Docker is not yet public, the company is on a strong trajectory toward IPO or acquisition, so those RSUs carry meaningful potential upside.*
 
 *I know there are limits to flexibility, but if we can move closer to these numbers, I’d be very comfortable moving forward quickly. I’m genuinely excited to join the team and want to make sure the package reflects the value of making this transition.*
+
+## Final offer
+* Base 139K
+* Equity 600K
+* 25K sign-on
+* + refreshes
+
+## Action points
+* Full name
+* Current home address
+* Citizenship status
