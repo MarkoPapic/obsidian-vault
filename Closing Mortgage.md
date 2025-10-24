@@ -1,17 +1,16 @@
 
-Done via phone
-
-It takes 10 days
-
 Documents required:
 * Certidao Registo Predial
 
-I don't pay the interest rate
+The money will be removed from my account on **November 7th**.
 
-Amount to be paid:
-* The penalty is 1146e
-* Emission of the cancellation of the mortgage: 80e + 20e
+I have 60 days to cancel the mortgage. I do this in the nearest conservatory (Cascais Civil Registry) or online. When the amount is paid, I will receive a **code** at my email. With this code, I get the mortgage cancellation confirmation. All the **instructions on obtaining the document will be in the email**. If I need help or have any questions, I can call ActivoBank.
 
-I have 60 days to cancel the mortgage. I do this in the nearest conservatory (Cascais Civil Registry). I give them the code that I get from ActivoBank once I pay my mortgage.
+**Questions**:
+* What about the next installment?
+	* The value of the next installment is already deducted
+* What about insurances that I bought as a requirement for the mortgage?
+	* House insurance (Multiriscos) is not cancelled automatically. I need to do this explicitly. It seems that I need to have 1  house insurance, so I cannot technically just cancel it - I would need to choose a new one to replace it.
+	* Life insurance is cancelled automatically by ActivoBank.
 
-He will send me a document with the summary.
+

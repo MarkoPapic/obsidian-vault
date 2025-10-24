@@ -36,6 +36,7 @@
 * id
 
 **trigger_event_criteria** (binds `triggers` and `event_types` many-many)
+* id
 * event_type_id
 * trigger_id
 * behavior: jsonb
@@ -93,12 +94,14 @@
 TODO:
 - [ ] V4
 - [ ] Triggers for composite keys
+	- [ ] trigger_event_criteria
+	- [ ] alert_escalation_steps
 - [ ] Update baseline
-- [ ] Indexes
-	- [ ] `alert_instances`: `unack_deadline`
-	- [ ] `alert_instances`: `unres_deadline`
-- [ ] We probably need separate tables for offline alerts
-- [ ] How to do escalations?
+
+Testing:
+- [ ] Check if triggers generate good IDs
+- [ ] Test migration
+- [ ] Test baseline
 
 # Gathering events
 
