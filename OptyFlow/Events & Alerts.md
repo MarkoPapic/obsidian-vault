@@ -1,104 +1,52 @@
 
-# DB Schema
+# Flows
 
-**event_categories**
-* id
-* name: varchar(1024)
+## Process event
 
-**event_types**
-* id: guid
-* name: varchar(1024)
-* description: varchar(4096)
-* category_id
-* enabled: boolean
-* actions: jsonb
-	* Whether to log
-	* ...
-* retention_days
+1. Event happens
+2. If event is enabled, log it
+3. If event is disabled, ignore it
 
-**events**
-* id
-* ocurred_at TIMESTAMP DEFAULT now (),
-* stopped_at: Makes sense for events that can be active for some time
-* device_id: so we can filter by controller id,
-* user_id: used if audience is 'affected_user',
-* is_active: We need this to figure out how long an even has been active
-* data: jsonb
+## Create alert (without escalation)
 
-**alerts**
-* id
-* name
-* description
-* trigger_id
-* enabled: boolean
+1. Create trigger
+2. Create alert
 
-**triggers**
-* id
+## Test alert
+1. Create alert
+2. Event happens
+3. Alert shows up in the UI
+4. Reload screen: alert should be displayed
 
-**trigger_event_criteria** (binds `triggers` and `event_types` many-many)
-* id
-* event_type_id
-* trigger_id
-* behavior: jsonb
+## Alert updates
+1. Alert happens
+2. Acknowledge alert
+3. New version of the alert is sent to the UI
+4. Reload screen: new version of the alert should be displayed
 
-**alert_audience_group**
-* id
-* alert_id
-* audience: jsonb
-* severity
-* communication_channels: jsonb
-* entity_filter: jsonb
+## Alert escalations
+1. Alert happens
+2. Wait for the escalation
+3. Escalation shows up for the escalation recipients
 
-**alert_escalation_policies**
-* id
-* alert_id
+## Process active event
 
-**alert_escalation_steps**
-* id
-* policy_id
-* audience: jsonb
-* severity
-* acknowledge_tolerance
-* resolve_tolerance
+1. ...
 
-**alert_instances**
-* id: int so we can use it as a cursor for "I've seen all alert instances up to this id"
-* alert_id
-* trigger_event_criteria
-* state
-* current_escalation_step
-* unack_deadline
-* unres_deadline
-* data
-	* e.g. controller ID, detector ID, etc.
-* metadata: jsonb
-	* timeline
-	* ...
+# ToDo
 
-**recipients**
-* id
-* alert_instance_id
-* user_id
-* seen (optional)
-* match_source: `base` | `escalation`
-* escalation_step
+- [ ] How to handle `onFreq` and `onActive` event criteria (check ChatGPT)
+	- [ ] Triggers
+- [ ] Escalation workflow
+- [ ] Cleanup logic
+	- [ ] Retention time for events
+	- [ ] Alert receipients
+	- [ ] Alert delivery
+	- [ ] Event frequency buckets
+	- [ ] Event activity duration deadlines
 
-**alert_delivery**
-* id
-* alert_instance_id
-* channel
-* status: used by the cron to ensure atomicity
-* last_attempt
-* error
+## Testing
 
-TODO:
-- [ ] V4
-- [ ] Triggers for composite keys
-	- [ ] trigger_event_criteria
-	- [ ] alert_escalation_steps
-- [ ] Update baseline
-
-Testing:
 - [ ] Check if triggers generate good IDs
 - [ ] Test migration
 - [ ] Test baseline
