@@ -5,7 +5,12 @@
 	* Promissory note for services rendered of $50000 per year
 		* But for this, we would need a 10h/week commitment for 5 years
 
-**My questions**
-* His split should be time limited
-	* Maybe progressive
+**My suggestions**
+* ISM brand pros/cons
+* Percentage of what?
+* We need to build the agreement around Dan's know-how, not ISM
+* We need an escape hatch
+	* What if we completely replace his code?
+	* We need to have a buyout clause at any time. What if Dan becomes unreasonable and obstructs the sale?
+
 
