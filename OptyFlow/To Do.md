@@ -1,45 +1,15 @@
-
-- [x] Update `controller` with `change_version` in baseline
-- [x] Update `controller` with `change_version` in `v4`
-	- [x] Sequence
-	- [x] Function
-	- [x] Table row
-	- [x] Trigger
-	- [x] Index
-- [x] Update `alert_instances` with `change_version` in baseline
-	- [x] Sequence
-	- [x] Function
-	- [x] Table row
-	- [x] Trigger
-	- [x] Index
-- [x] Update `alert_instances` with `change_version` in v5
-	- [x] Sequence
-	- [x] Function
-	- [x] Table row
-	- [x] Trigger
-	- [x] Index
-- [x] index on `change_version` on both controller and alert instances
-- [x] Update v5 with new `bump_change_version function name
-- [x] Update change_version_triggers based on new `bump_change_version` function
-- [x] Make `baseline` use v4 indexes and triggers
-- [x] search for `;` in all files
-- [x] `location_id` UUID in baseline
-- [x] locationd_id in v4
-- [x] Deprecate `Id` in Controller
-- [x] Deprecate `Id` in controller handles
-- [x] Update controller fetching queries
-- [x] Update controller handle fetching queries
-- [x] Update controller location-related queries
-- [x] Update LocationDb queries
-- [x] Update controller/handle adapters
-- [x] Update location adapters
-- [x] Update ad-hoc controller id scans
-- [x] Update ad-hoc location id scans
-- [x] Update controller message adapter
-- [x] Update location message adapter
-- [x] New protobufs
-	- [x] `addController`
-	- [x] `alertConfiguration`
-	- [x] `controller`
-	- [x] `getFieldDevices`
-	- [x] `location`
+- [x] Get event types endpoint
+- [ ] Update event type endpoint (enable)
+- [x] Events screen on the UI
+- [ ] Alert instances list
+- [ ] Events & alerts cleanup job
+	- [ ] `event_active_duration_deadlines`
+	- [ ] `event_frequencies`
+	- [ ] `alert_instances`
+	- [ ] `alert_recipients`
+	- [ ] `alert_delivery_attempts`
+- [ ] System settings
+	- [ ] `v6.go` that matches the baseline
+- [ ] Enable alert
+- [ ] Entity filters
+- [ ] Reuse escalation policies for multiple alerts (DB schema supports this)
