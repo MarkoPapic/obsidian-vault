@@ -1,1 +1,1 @@
-Emulators IP: `192.168.0.134`
+Emulators IP: `192.168.0.34`
