@@ -9,8 +9,9 @@ udp port 5001
 
 
 Wireshark:
-- Events
+- Alerts: ???
 - Event page for the controller: 18:36
-- Alerts
 - Status counters: 18:47
 
+Staging DB VM IP: `192.168.122.137`
+Staging VM IP: `192.168.122.246`

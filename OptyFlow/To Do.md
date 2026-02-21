@@ -1,43 +1,16 @@
-- [x] On frequency should "reset" after the trigger has happened. Currently if "5 in 1 minute" we fire an alert on 6, 7, 8, etc. 
-- [x] On duration should also reset (e.g. if "active for 5" triggered it, 6th minute should not trigger it)
-- [x] Boolean algebra for triggers
-- [x] Feature flags fix
-- [x] UI: Don't allow to choose trigger type until they select an event type. Not all trigger types apply to all event types.
-- [x] Use `uuid.MustParse`
-- [x] Replace that expensive hash Postgres function with the other option
-- [ ] SDK methods that need to be refactored
-	- [ ] `stopListeningControllerStatus`
-	- [ ] `stopListeningControllerControl`
-	- [ ] `getControllerDbVersionHistory`
-	- [ ] `getControllerDbDrafts`
-	- [ ] `downloadControllerDbVersion`
-	- [ ] `revertControllerDbVersion`
-	- [ ] `getControllerDbVersionChanges`
-	- [ ] `getControllerDbDiffs`
-	- [ ] `getControllerDbDraftMismatches`
-	- [ ] `setControllerManualControl`
-	- [ ] `setControllerCoordPattern`
-	- [ ] `setControllerCoordPatternBulk`
-	- [ ] `setControllerTime`
-	- [ ] `setControllerTimeBulk`
-	- [ ] `setControllerPhaseControl`
-- [ ] Test everything one more time (with signals)
-- [ ] Test migration
-- [ ] Fix bug where seen alerts reappear after reload
-- [x] Set CASCADE to set `null` for all FKs to `event_log` so that it doesn't prevent the cleanup job
-- [x] Set CASCADE to other new tables where needed
+
 - [ ] Events & alerts cleanup job
 	- [ ] `event_active_duration_deadlines`
 	- [ ] `event_frequencies`
 	- [ ] `alert_instances`
 	- [ ] `alert_recipients`
 	- [ ] `alert_delivery_attempts`
-- [ ] Errors
-- [ ] Entity filters
+	- [ ] ... (maybe Boolean expression states)
 - [ ] Reuse escalation policies for multiple alerts (DB schema supports this)
-- [ ] Event polling
-- [ ] Email delivery
-- [ ] SMS delivery
-- [ ] Alert card additional information and styling
-- [ ] Entity filters configuration for triggers
+- [x] Auto local data clear
+- [ ] Styling
+- [x] RBAC
+	- [x] Assign user permissions (remove and add)
+- [x] Shut down staging
+- [ ] Deploy `cloudws` to prod
 
