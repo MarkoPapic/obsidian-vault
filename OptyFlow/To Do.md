@@ -1,16 +1,13 @@
 
-- [ ] Events & alerts cleanup job
-	- [ ] `event_active_duration_deadlines`
-	- [ ] `event_frequencies`
-	- [ ] `alert_instances`
-	- [ ] `alert_recipients`
-	- [ ] `alert_delivery_attempts`
-	- [ ] ... (maybe Boolean expression states)
-- [ ] Reuse escalation policies for multiple alerts (DB schema supports this)
-- [x] Auto local data clear
-- [ ] Styling
-- [x] RBAC
-	- [x] Assign user permissions (remove and add)
-- [x] Shut down staging
-- [ ] Deploy `cloudws` to prod
+Infra changes:
+- [ ] ... 
 
+**Production deployment of `v0.0.16`**:
+- [ ] Figure out how to configure new cloud address in `tmc`
+- [ ] Add a `cloudws.optyflow.com` domain in Namecheap
+- [ ] Deploy `tmc` and wait for it to update in Concord (because once we upload `cloudws`, it won't be backwards compatible and `tmc` will not be able to auto-update)
+- [ ] Make a `cloudws` release
+- [ ] Make infra changes
+	- [ ] New Terraform configuration
+	- [ ] Ensure `cloudws` and `mcp` are deployed (maybe all services just in case)
+	- [ ] (Optional) Delete `moved.tf` once the new Terraform configuration has been deployed to all environments

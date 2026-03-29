@@ -15,3 +15,6 @@ Wireshark:
 
 Staging DB VM IP: `192.168.122.137`
 Staging VM IP: `192.168.122.246`
+
+Prod DB VM IP: `192.168.122.136`
+Prod VM IP: `192.168.122.180`
