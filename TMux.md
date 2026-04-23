@@ -34,7 +34,7 @@ Attach or start: `tmux new -As <name>`
 Attach to the most recent session: `tmux attach`
 Navigate between sessions: `Ctrl+b s`
 List all sessions: `tmux ls`
-Rename window: `Ctrl+b $`
+Rename session: `Ctrl+b $`
 Detach from all sessions: `Ctrl+b d`
 
 Create a new window within the session:
