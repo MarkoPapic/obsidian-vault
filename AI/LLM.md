@@ -1,3 +1,16 @@
+
+## References
+
+- [Build a Large Language Model (From Scratch) - Sebastian Raschka](https://www.manning.com/books/build-a-large-language-model-from-scratch)
+- [Stanford CS224N](https://web.stanford.edu/class/cs224n/)
+	- [lecture](https://www.youtube.com/watch?v=LWMzyfvuehA&list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D&index=9)
+	- [lecture notes](https://web.stanford.edu/class/cs224n/readings/cs224n-self-attention-transformers-2023_draft.pdf?utm_source=chatgpt.com)
+	- [lecture slides](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1234/slides/cs224n-2023-lecture08-transformers.pdf?utm_source=chatgpt.com)
+
+## Overview
+
+![[llm_architecture_diagram.png]]
+
 ## Embeddings
 
 After tokenization, your text looks like this:
@@ -69,11 +82,15 @@ This mathematical implementation introduces a lot of unnecessary overhead. This 
 ![[embedding_layer_lookup_table.png]]
 
 
+## Encoding word positions
+
+See Build a ***Large Language Model (From Scratch) -> 2.8 Encoding word positions***
+
 ## Self-Attention
 
 In self-attention, each token asks: "**Which other tokens are relevant to me?**"
 
-One popular self-attention implementation is **query-key-value**, which is based on introducing three linear **layers** (linear projections):
+One popular self-attention implementation is **scaled dot-product attention**, which is based on introducing three linear **layers** (linear projections):
 - query
 - key
 - value
@@ -106,6 +123,54 @@ $$
 
 This operation is applied per token: each row $q_i$ attends to all rows $k_j$ and aggregates their corresponding values $v_j$.
 The keys are used only to compute attention weights, while the values are used only to compute the output.
+The output is a context matrix containing context vectors for each embedding.
+
+So the flow of calculation of self-attention is the following:
+- For each token, compute the **attention score** between the token and other tokens, including itself
+- Compute the **attention weights** between the token and other tokens, including itself (do not confuse with trainable weights)
+- Compute the **context vectors** (output)
+
+For example, consider how the token "Flower" (query q₁) attends to all tokens in the "*Flower blossoms in spring*" sequence.
+
+| Token    | q vector       | k vector       | v vector       | score                         | scaled score                                                | att. weights                                                    | output                                               |
+| -------- | -------------- | -------------- | -------------- | ----------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------- |
+| Flower   | $\textbf{q}_1$ | $\textbf{k}_1$ | $\textbf{v}_1$ | $\textbf{q}_1 \textbf{k}_1^T$ | $s_{1, 1} = \frac{\textbf{q}_1 \textbf{k}_1^T}{\sqrt{d_k}}$ | $a_{1,1} = \frac{\exp(s_{1, 1})}{\sum_{m=1}^{4} \exp(s_{1,m})}$ | $\textbf{o}_1 = \sum_{j=1}^{4} a_{1,j} \textbf{v}_j$ |
+| blossoms |                | $\textbf{k}_2$ | $\textbf{v}_2$ | $\textbf{q}_1 \textbf{k}_2^T$ | $s_{1, 2} = \frac{\textbf{q}_1 \textbf{k}_2^T}{\sqrt{d_k}}$ | $a_{1,2} = \frac{\exp(s_{1, 2})}{\sum_{m=1}^{4} \exp(s_{1,m})}$ |                                                      |
+| in       |                | $\textbf{k}_3$ | $\textbf{v}_3$ | $\textbf{q}_1 \textbf{k}_3^T$ | $s_{1, 3} = \frac{\textbf{q}_1 \textbf{k}_3^T}{\sqrt{d_k}}$ | $a_{1,3} = \frac{\exp(s_{1, 3})}{\sum_{m=1}^{4} \exp(s_{1,m})}$ |                                                      |
+| spring   |                | $\textbf{k}_4$ | $\textbf{v}_4$ | $\textbf{q}_1 \textbf{k}_4^T$ | $s_{1, 4} = \frac{\textbf{q}_1 \textbf{k}_4^T}{\sqrt{d_k}}$ | $a_{1,4} = \frac{\exp(s_{1, 4})}{\sum_{m=1}^{4} \exp(s_{1,m})}$ |                                                      |
+
+The matrix representation of the above calculation for all tokens is the original formula:
+$$
+O = Attention(Q,K,V) = softmax(\frac{Q K^T}{\sqrt{d_k}})V
+$$
+
+Layers Q, K, and V use **parallel computational paths,** not sequential. Which means they make this architecture a **multi-branch neural network**:
+
+![[qkv_multibranch_architecture.png]]
+
+This is what the implementation of the above self-attention would look like in PyTorch:
+```
+class SelfAttention_v2(nn.Module):
+    def __init__(self, d_in, d_out, qkv_bias=False):
+        super().__init__()
+        self.W_query = nn.Linear(d_in, d_out, bias=qkv_bias)
+        self.W_key   = nn.Linear(d_in, d_out, bias=qkv_bias)
+        self.W_value = nn.Linear(d_in, d_out, bias=qkv_bias)
+
+    def forward(self, x):
+        keys = self.W_key(x)
+        queries = self.W_query(x)
+        values = self.W_value(x)
+        attn_scores = queries @ keys.T
+        attn_weights = torch.softmax(
+            attn_scores / keys.shape[-1]**0.5, dim=-1
+        )
+        context_vec = attn_weights @ values
+        return context_vec
+```
+
+
+### Self-Attention Intuition
 
 Intuitively, you can think of these concepts as:
 - Q: _what I'm looking for_
@@ -224,3 +289,81 @@ Following are some token-level behaviors that exemplify query-token-value self-a
 	- Q = “what task am I solving?”
 	- K = “I encode task + input”
 	- V = “information to generate answer”
+
+### Hiding future words with causal attention
+
+See: ***Large Language Model (From Scratch) -> 3.5 Hiding future words with causal attention***
+
+### Masking additional attention weights with dropout
+
+Dropout in deep learning is a technique where randomly selected hidden layer units are ignored during training, effectively “dropping” them out. This method helps prevent overfitting by ensuring that a model does not become overly reliant on any specific set of hidden layer units. It’s important to emphasize that dropout is only used during training and is disabled afterward.
+
+See: ***Large Language Model (From Scratch) -> 3.5.2 Masking additional attention weights with dropout***
+
+### Extending single-head attention to multi-head attention
+
+See: ***Large Language Model (From Scratch) -> 3.6 Extending single-head attention to multi-head attention***
+
+## Linear Output Layer
+
+Linear output layer (a.k.a. _Language Modeling Head_) **learns to predict the next token** by using the context learnt by the transformer as an input.
+
+It projects the transformer's output into the vocabulary space of the tokenizer to generate **logits** for each token in the vocabulary.
+It outputs the matrix of shape `[input_size, vocab_size]` that represents the following:
+- **Rows**: Each row corresponds to one of the input tokens
+- **Columns**: Each column corresponds to a specific token in the tokenizer's vocabulary
+- **Values**: The number at row `i` and column `j` represents how strongly the model believes that token `j` should be the _next_ word following token `i`.
+
+To make these raw values usable, they are passed through a Softmax function so that they represent probabilities.
+
+To predict the next token, we simply look at the last row and find the column with the highest probability. Then we decode the token (column position) using the tokenizer to get the word.
+
+There are two different ways LLM architects design this layer:
+- **Standard way**: Just a massive standard linear layer
+- **Weight tying**:
+	- The very first, embedding layer translates _vocabulary space -> vector space_.
+	- The LM head does the opposite: _vector space -> vocabulary space_
+	- The weight matrices of these two layers mirror each other's dimensions. Embedding: `[vocab_size, input_size]` , LM head: `[input_size, vocab_size]`
+	- So, researches realized that they could literally use the **exact same weight matrix for both layers**. You just transpose it when using it with the LM head layer.
+
+## Dimensionality Throughout the Architecture
+
+Example config:
+- `vocab_size`: 50257
+- `context_length`: 1024
+- `emb_dim`: 768
+
+### No batching (batch size 1)
+
+Input: `This is an example.`
+Text parts: `[This, is, an, example, .]`
+Tokenized text:  -> `[40134, 2052, 133, 389, 12]`
+
+`input_size`: `[5]`
+- 5 tokens, where each token is a scalar (number)
+
+**Embeddings output size**: `[input_size, emb_dim] = [5, 768]`
+
+**Positional embeddings output size**:  `[input_size, emb_dim] = [5, 768]`
+- Same as embeddings
+
+**Transformer output size**: `[input_size, emb_dim] = [5, 768]`
+- Same as embeddings
+- Even though dimensionality changes internally within the transformer, transformer output has the same dimensions as the embedding layer output
+- Transformer has residual connections in two places. Residual connections wouldn't be possible if the dimensionalities of the participating layers were different.
+	- embeddings -> multi-head attention output
+	- dropout -> transformer output
+
+**Normalization output size**: `[input_size, emb_dim] = [5, 768]`
+- Normalization doesn't change dimensionality
+
+**Output size**: `[input_size, vocab_size] = [5, 50257]`
+- Output layer input (transformer output) has the shape of `[input_size, emb_dim]`
+- The output layer weight matrix has the shape of `[emb_dim, vocab_size]`
+- Output layer output shape is `[input_size, emb_dim] x [emb_dim, vocab_size] = [input_size, vocab_size]`
+	- Because the inner dimensions (`emb_dim`) match, matrix multiplication collapses them
+
+### TODO: Batching
+
+TODO
+

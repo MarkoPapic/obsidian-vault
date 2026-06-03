@@ -1,0 +1,6 @@
+- When entering a channel number in a movement:
+	- There are two typing cursors
+	- `Enter` doesn't confirm it
+- Maybe delete a movement only on `Delete` and not on `Backspace`. I wanted to delete a channel number using `Backspace` and deleted the movement instead.
+- Instead of `Ctrl+C/Ctrl+V`, we should use `Ctrl+D` (duplicate)
+- Selection frame around arrows should rotate together with arrows
