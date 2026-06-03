@@ -318,6 +318,8 @@ To make these raw values usable, they are passed through a Softmax function so t
 
 To predict the next token, we simply look at the last row and find the column with the highest probability. Then we decode the token (column position) using the tokenizer to get the word.
 
+During inference, you only look at last row, but during training, you are considering all the rows. You may ask "Are rows `0` to `n-1` prone to overfitting because their respective successors (next tokens) are already in the input?", but this overfitting is prevented by [[#Hiding future words with causal attention]].
+
 There are two different ways LLM architects design this layer:
 - **Standard way**: Just a massive standard linear layer
 - **Weight tying**:
