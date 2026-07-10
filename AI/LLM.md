@@ -1,11 +1,63 @@
 
 ## References
 
+### Books
+
 - [Build a Large Language Model (From Scratch) - Sebastian Raschka](https://www.manning.com/books/build-a-large-language-model-from-scratch)
+
+### Lectures
+
 - [Stanford CS224N](https://web.stanford.edu/class/cs224n/)
 	- [lecture](https://www.youtube.com/watch?v=LWMzyfvuehA&list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D&index=9)
 	- [lecture notes](https://web.stanford.edu/class/cs224n/readings/cs224n-self-attention-transformers-2023_draft.pdf?utm_source=chatgpt.com)
 	- [lecture slides](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1234/slides/cs224n-2023-lecture08-transformers.pdf?utm_source=chatgpt.com)
+
+### Podcasts
+
+[Mastering Language Models: From Architecture to Optimization](https://open.spotify.com/show/033dwAg1kp0G2uFXyevnoh)
+
+### Papers
+
+**Foundations**
+ - [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+
+**Data size & scaling**
+- [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
+
+**RLHF: From next token prediction to useful models**
+- [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347)
+    - The RL algorithm used in RLHF. You need to understand PPO to understand how models are aligned.
+- [Training language models to follow instructions with human feedback](https://arxiv.org/abs/2203.02155)
+    - THE alignment paper. Describes the pipeline that turned GPT-3 into a model that actually follows instructions (ChatGPT's predecessor).
+- [Learning to summarize from human feedback](https://arxiv.org/abs/2009.01325)
+    - The proof-of-concept for RLHF. Showed that human preferences can be used to train better models than supervised learning alone.
+- [Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2204.05862)
+    - Provides the most detailed reference implementation of RLHF and introduces the helpfulness vs. harmlessness tension.
+- [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290)
+    - Simplifies RLHF dramatically. No reward model, no PPO, no RL at all — just a supervised loss function.
+- [RLHF Deciphered: A Critical Analysis of Reinforcement Learning from Human Feedback for LLMs](https://dl.acm.org/doi/10.1145/3743127)
+    - A retrospective analysis of what actually works and doesn't work in RLHF.
+- [Robust Reinforcement Learning from Human Feedback for Large Language Models Fine-Tuning](https://arxiv.org/abs/2504.03784)
+    - Addresses practical stability issues in RLHF training.
+
+**Training infrastructure**
+- [GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism](https://arxiv.org/abs/1811.06965)
+    - Also explore data parallelism and tensor parallelism
+- [Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism](https://arxiv.org/abs/1909.08053)
+- [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](https://arxiv.org/abs/1910.02054)
+    - Meta's production implementation of ZeRO, used to train Llama and other LLMs: https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/
+- [Research on Distributed Training Architecture for Large Scale Models for Natural Language Processing](https://dl.acm.org/doi/10.1145/3728725.3728812)
+- [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135)
+- [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
+
+**Real-world models**
+- [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
+
+**Agents & coding**
+- [FireAct: Toward Language Agent Fine-tuning](https://arxiv.org/abs/2310.05915)
+- [Training Software Engineering Agents and Verifiers with SWE-Gym](https://arxiv.org/abs/2412.21139)
+- [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/abs/2402.03300)
+
 
 ## Overview
 

@@ -87,7 +87,7 @@ Some common activation functions:
 		- it is strictly positive
 		- it sums to one
 	- Keeps the result as the estimate of the conditional probability $p(y=c|x)$
-	- It guarantee that the values:
+	- It guarantees that the values:
 		- are strictly positive
 		- sum to one
 	- Predicted class is the one with highest estimated probability.
@@ -502,7 +502,7 @@ Here are some advantages of using skip connections:
 
 Skip connections are used in when the layer is usually **not expected to produce the full final representation**. It is expected to produce an **update** to the current representation:
 - Good fit:
-	- token representation → attention/MLP update → improved token representation
+	- token representation → attention/NLP update → improved token representation
 	- image feature map → convolutional update → improved image feature map
 	- hidden state → transformation → improved hidden state
 - Bad fit:
