@@ -123,7 +123,7 @@ Embedding layer does **NOT have pre-activation or activation**. It is just a loo
 ### How is Embedding Layer Implemented
 
 Mathematically, an embedding layer is a **fully connected linear layer with one-hot encoding**:
-- Each neuron from a previous layer is connected to each layer of the current layer)
+- Each neuron from a previous layer is connected to each layer of the current layer
 - Output of each neuron gets calculated using a one-hot encoding of the input layer.
 
 ![[embedding_layer_one-hot.png]]
@@ -417,7 +417,81 @@ Tokenized text:  -> `[40134, 2052, 133, 389, 12]`
 - Output layer output shape is `[input_size, emb_dim] x [emb_dim, vocab_size] = [input_size, vocab_size]`
 	- Because the inner dimensions (`emb_dim`) match, matrix multiplication collapses them
 
-### TODO: Batching
+### TODO: With batching
 
 TODO
+
+## Inference
+
+An LLM outputs a matrix of **logits** of shape `[input_size, vocab_size]` where each row corresponds to an input token and each column represents how strongly the model believes that each vocabulary token should be the next word (see [[#Linear Output Layer]])
+
+To make these raw values usable, we pass them through a Softmax function so that they represent probabilities.
+
+To predict the next token, we simply look at the last row and find the column with the highest probability. Then we decode the token (column position) using the tokenizer to get the word.
+
+To generate text, we just repeat this next token generation multiple times and append the next token to an existing result.
+
+### Introducing and controlling randomness
+
+A trained LLM inference is **deterministic** — it will output the same token logits for the same input.
+
+This means, if we always choose a logit with the highest probability, it will always generate the same text for the same input.
+```
+probas = torch.softmax(next_token_logits, dim=0)
+next_token_id = torch.argmax(probas).item()
+```
+
+We could introduce randomness by replacing `argmax` with `multinomial`, which samples the next token proportional to its probability score. This means, the token with the highest probability will be selected most of the time but not all the time.
+```
+next_token_id = torch.multinomial(probas, num_samples=1).item()
+```
+
+We can further control the distribution and selection process via a concept called **temperature scaling**, which is just a fancy description for dividing the logits by a number greater than 0: 
+```   
+logits = logits / temperature
+probas = torch.softmax(logits, dim=-1)
+idx_next = torch.multinomial(probas, num_samples=1)
+```
+
+Smaller temperature value, such as `0.1`, results in a much sharper distribution (most likely token gets selected almost 100% of the time), whereas a larger temperature value, such as `5`, results in a more uniform distribution.
+
+![[temperature_scaling.png]]
+
+Temperature scaling allows less likely but potentially more interesting and creative paths in the generation process. However, a downside is that it sometimes leads to grammatically incorrect or completely nonsensical outputs such as "every effort moves you pizza". To overcome this, we introduce **top-k sampling** to restrict the sampled tokens to the top-k most likely tokens and exclude all other tokens from the selection process by masking their values:
+```
+# get top 3 logits
+top_k = 3
+top_logits, top_pos = torch.topk(next_token_logits, top_k)
+
+# set other logits to negative infinity (-inf)
+# this will make all non-top-k logits probabilities 0.0
+new_logits = torch.where(
+    condition=next_token_logits < top_logits[-1],
+    input=torch.tensor(float('-inf')),
+    other=next_token_logits
+)
+```
+
+
+## Fine-tuning to follow instructions
+
+
+Datasets:
+- Raschka's dataset
+	- 1100 instructions
+	- Created specifically for the _Build a Large Language Model_ book
+	- https://raw.githubusercontent.com/rasbt/LLMs-from-scratch/main/ch07/01_main-chapter-code/instruction-data.json
+- Stanford Alpaca dataset
+	- 52000 instructions
+	- https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json
+- LIMA
+	- See https://arxiv.org/abs/2305.11206
+	- https://huggingface.co/datasets/GAIR/lima
+- UltraChat
+	- 805000 instructions
+	- https://huggingface.co/datasets/openchat/ultrachat-sharegpt
+- Alpaca GPT-4
+	- 52000 instructions
+	- Alpaca-like dataset, generated with GPT-4 instead of GPT-3.5
+	- https://github.com/Instruction-Tuning-with-GPT-4/GPT-4-LLM/blob/main/data/alpaca_gpt4_data.json
 
