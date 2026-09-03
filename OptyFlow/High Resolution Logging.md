@@ -19,3 +19,8 @@ You can download the data files via FTP. If circular buffering is enabled you do
 Place the asc3Aries.ini file in the same folder as the utility program. When you start it up it will display the above OIDs as the first top 2 items. Do **Set** or **Get** operations as described above.
 Default ASC/3 ftp _username/password_ is **econolite/ecpi2ecpi**. User selected username/ password can be achieved upon request.
 
+## Traffop
+
+Questions:
+- Does the Web App API component also read from Append Blob and process data?
+- ...

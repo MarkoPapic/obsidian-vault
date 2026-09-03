@@ -1,0 +1,5 @@
+- \[AGREED\] Status list dropdowns with predefined use cases
+	- Confirm understanding
+	- We need to have expertise. Do we need data?
+- Map semi status
+	- We need to ensure to get them to the real status

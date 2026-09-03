@@ -1,0 +1,6 @@
+- [ ] Repository
+- [ ] `systemd` service + share installation script
+- [ ] Running locally
+	- [ ] [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local?pivots=programming-language-csharp)
+	- [ ] [Azurite](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite)
+	- [ ] You can also use Docker Compose if you want

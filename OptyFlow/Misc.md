@@ -1,4 +1,4 @@
-Emulators IP: `192.168.0.34`
+Emulators IP: `192.168.0.88`
 
 Wireshark VM password: `StrongPassword123!`
 
