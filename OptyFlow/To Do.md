@@ -8,7 +8,7 @@
 - [ ] StatusDbData should be refreshed upon Download
 - [ ] Entity Tree collapses on page change (e.g. when navigating from status list to map)
 - [ ] Reports should run as soon as the user navigates to the report template (with default filters)
-- [ ] Outline what categorizes as a fault in `Faults Summary by Intersection`
+- [x] Outline what categorizes as a fault in `Faults Summary by Intersection`
 - [x] Rename `Phases ON` to `Active Phases`
 
 
@@ -27,3 +27,12 @@
 **Reporting**:
 - [ ] Integration tests for reporting features
 - [ ] Sort event by time in UI (maybe even when fetching)
+
+**Sasa meeting**
+- [x] We need to do prioritization
+- [x] We must ensure stability
+- [x] When is the Miovision demo?
+- [x] My proposal:
+	- [x] laser focus on Miovision
+	- [x] maybe one more release for Concord
+- [x] Test that Sasa can add users to Miovision OptyFlow instance
